@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="design4.css">
+    <title>F to K and K to F</title>
+</head>
+<body class="body">
+    <nav>
+        <div class="logo">
+            <a id="symbol" href="">TEMPERATURE CONVERTER</a>
+        </div>
+        <ul>
+        <li><a class="hover" href="main.html"><i>Home page</i></a></li>
+        <li><a class="hover" href="c to f.html"><i>°C to °F & °F to °C</i></a></li>
+        <li><a class="hover" href="c to k.html"><i>°C to K & K to °C</i></a></li>
+        <li><a class="hover" href="f to k.html"><i>°F to K & K to °F</i></a></li>
+        </ul>
+        <div class="menu">
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+        </div>
+    </nav>
+
+    <div id="wrapper">
+        <h2>Fahrenheit to Kelvin</h2>
+        <div class="inputdiv">
+            <input type="number" id="inputfahrenheit" placeholder="Temp in °F">
+            <button type="button" onclick="convertToKelvin()">Convert to Kelvin</button>
+        </div>
+        <div id="resultKelvin"></div>
+        <p>FORMULA: K=((℉-32)/1.8)+273.15</p>
+    </div>
+
+    <div id="wrapper">
+        <h2>Kelvin to Fahrenheit</h2>
+        <div class="inputdiv">
+            <input type="number" id="inputKelvin" placeholder="Temp in K">
+            <button type="button" onclick="convertToFahrenheit()">Convert to Fahrenheit</button>
+        </div>
+        <div id="resultFahrenheit"></div>
+        <p>FORMULA: ℉=((K-273.15)*1.8)+32</p>
+    </div>
+
+    <script>
+        function convertToKelvin() {
+            const fahval = Number(document.getElementById("inputfahrenheit").value);
+            const kelval = ((fahval - 32) / 1.8) + 273.15;
+            const resultKelvin = document.getElementById("resultKelvin");
+            resultKelvin.innerHTML = kelval.toFixed(2) + ' K ';
+        }
+
+        function convertToFahrenheit() {
+            const kelval = Number(document.getElementById("inputKelvin").value);
+            const fahval = ((kelval - 273.15) * 1.8) + 32;
+            const resultFahrenheit = document.getElementById("resultFahrenheit");
+            resultFahrenheit.innerHTML = fahval.toFixed(2) + ' °F';
+        }
+
+        // Function to handle Enter key press for Fahrenheit to Kelvin
+        document.getElementById("inputfahrenheit").addEventListener("keydown", function(event) {
+            if (event.key === "Enter" || event.keyCode === 13) {
+                convertToKelvin();
+            }
+        });
+
+        // Function to handle Enter key press for Kelvin to Fahrenheit
+        document.getElementById("inputKelvin").addEventListener("keydown", function(event) {
+            if (event.key === "Enter" || event.keyCode === 13) {
+                convertToFahrenheit();
+            }
+        });
+    </script>
+
+    <script>
+        const menu = document.querySelector('.menu');
+        const menuList = document.querySelector('nav ul');
+        menu.addEventListener('click', () => {
+            menuList.classList.toggle('showmenu');
+        });
+    </script>
+</body>
+</html>

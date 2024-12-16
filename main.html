@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="design.css">
+    <title>Temperature converter</title>
+</head>
+<body class="body">
+    <nav>
+    <div class="logo">
+        <a id="symbol" href="">TEMPERATURE CONVERTER</a>
+    </div>
+    <ul>
+        <li class="navbar"><a class="hover" href="main.html"><i>Home page</i></a></li>
+        <li class="navbar"><a class="hover" href="c to f.html"><i>°C to °F & °F to °C</i></a></li>
+        <li class="navbar"><a class="hover" href="c to k.html"><i>°C to K & K to °C</i></a></li>
+        <li class="navbar"><a class="hover" href="f to k.html"><i>°F to K & K to °F</i></a></li>
+    </ul>
+    <div class="menu">
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+</nav>
+<div id="box">
+<div id="content">
+    <h3>What is a Temperature?</h3>
+    <dd>Temperature is the measure of the average heat of the molecules in a substance that gives the degree of hotness or coldness of the substance. Hence, the measure of the degree of hotness or coldness of an object is called temperature.</dd>
+   <br>
+    <h3>What is a Temperature Converter</h3> 
+    <dd>A temperature converter helps in the conversion of the measurement units of the temperature recorded in a particular unit.</dd>
+    <br>
+    <h3>What are the units of Temperature?</h3>
+    <dd>In Temperature Scale, there are three important units, namely:</dd>
+    <div class="wbox">
+    <ul class="list">
+       <li class="dot">The Celsius scale (°C) </li>
+        <li class="dot">The Fahrenheit scale (°F) </li>
+        <li class="dot">The Kelvin scale (K) </li>
+    </ul>
+</div>
+<h3 class="heading">1. CELSIUS SCALE</h3>
+<dd>The Celsius scale, also known as the centigrade scale, is a temperature scale based on 0o for the freezing point of water and 100o for the boiling point of water. This scale was first introduced by (and is named after) the Swedish physicist, astronomer, and engineer Anders Celsius.</dd>
+
+<h3 class="heading">2. FAHRENHEIT SCALE</h3>
+<dd> The Fahrenheit scale is determined by the melting and boiling point of the water, and it is abbreviated as ⁰F. The Fahrenheit scale is divided into 180 equal parts in such a way that, 32 ⁰F being the lowest point and 212 ⁰F is the highest point.</dd>
+
+<h3 class="italic">a. Conversion formula between Celsius and Fahrenheit:</h3>
+<ul class="list">
+    <li>Convert from Celsius to Fahrenheit:	<br></li>
+    <p>℉=(℃*1.8)+32</p>
+    <li>Convert from Fahrenheit to Celsius:	<br></li>
+    <p>℃=(℉-32)/1.8</p>
+</ul>
+<h3 class="heading">3. KELVIN SCALE</h3>
+<dd>The Kelvin scale is a unit of temperature, mostly used in the world of science. The scale was invented by Lord Kelvin who saw the need for a scale where absolute zero was the null point, which means that 0 K is the lowest possible temperature = -273,15 °C.</dd>
+
+<h3 class="italic">b. Conversion formula between Celsius and Kelvin:</h3>
+<ul class="list">
+    <li>Convert from Celsius to Kelvin:	<br></li>
+    <p>K=℃+273.15</p>
+    <li>Convert from Kelvin to Celsius:	<br></li>
+    <p>℃=K-273.15</p>
+</ul>
+
+<h3 class="italic">c. Conversion formula between Fahrenheit and Kelvin:</h3>
+<ul class="list">
+    <li>Convert from Fahrenheit to Kelvin:	<br></li>
+    <p>K=((℉-32)/1.8)+273.15</p>
+    <li>Convert from Kelvin to Fahrenheit:	<br></li>
+    <p>℉=((K-273.15)*1.8)+32</p>
+</ul>
+
+</div>
+</div>
+
+<script>
+const menu= document.querySelector('.menu')
+const menuList = document.querySelector('nav ul')
+menu.addEventListener('click',()=>{
+    menuList.classList.toggle('showmenu')
+})
+</script>
+</body>
+</html>
+

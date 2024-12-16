@@ -1,0 +1,179 @@
+body{
+    margin:0;
+    padding:0;
+    font-family:'Times New Roman', Times, serif;
+    background-color: rgb(123, 244, 123);
+}
+
+nav{
+    background-color: #5A7A0A;
+    font-size: 25px;
+    font-weight: bolder;
+    width:99.%;
+    text-align: center;
+    justify-content: space-around;
+    padding-top:10px; 
+    padding-bottom: 10px;
+    border: 5px solid rgb(173, 238, 173);
+    border-radius: 10px;
+}
+
+nav li{
+    margin: 0 8px;
+    display: inline-block;
+    padding-top: 5px;
+    margin-right:0px;
+
+}
+.logo{
+    font-size: 40px;
+    font-weight: bolder; 
+    text-decoration: underline #FDD48A;
+}
+
+nav a{
+    text-decoration: none;
+    margin-right: 55px;
+    padding-left: 0px;
+}
+
+.hover:hover{
+color: #FDD48A;
+text-decoration: underline;
+}
+
+.hover{
+    color: aliceblue;
+    padding-right: 20px;
+}
+
+#symbol{
+    color: #FDD48A;
+    display: grid;
+    line-height: 60px;
+}
+
+.menu-line{
+    height:3px;
+    width:20px;
+    background-color:#FDD48A ;
+    margin-bottom:3px;
+    position: relative;
+    bottom:15px;
+}
+
+.menu{
+    cursor: pointer;
+    display: none;
+}
+
+@media all and (max-width:1250px){
+    nav{
+        flex-direction: coulmn;
+        align-items: center;
+    }
+
+    nav li{
+
+        padding:10px 0;
+    }
+    ul{
+        text-align: center;
+        display: none;
+    }
+
+.logo{
+    align-self: flex-start;
+    margin:10px 0px 0px 30px;
+}
+
+.menu{
+    display:block;
+    position: absolute;
+    right:20px;
+    top:25px;
+}
+
+.showmenu{
+    display: block;
+}
+}
+
+#wrapper div,#wrapper h2{
+    display:grid;
+    justify-content: center;
+    
+}
+
+h2{
+    color:#5A7A0A;
+    font-size: 40px;
+    text-decoration: underline;
+}
+
+p{
+    display:grid;
+    justify-content: center;
+    color:black;
+    font-size: 20px;
+    font-weight: bolder;
+    padding-top: 5px;
+    font-style: italic;
+}
+
+
+input{
+    border-radius: 5px;
+    border: 3px solid #5A7A0A ;
+    margin-top:0px;
+    height:4em;
+    width:300px;
+    padding-left:10px;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+input:active{
+    border:none;
+}
+#wrapper{
+    margin:60px auto;
+    height:400px;
+    border: solid 5px #5A7A0A;
+    background-color: rgb(173, 238, 173);
+    border-radius:10px;
+    padding:0px;
+    justify-content: space-around;
+
+}
+
+button{
+    margin-top:30px;
+    background-color:#5A7A0A;
+    border-radius: 4px;
+    height: 50px;
+    font-weight: 1000;
+    font-size: large;
+    padding: 0 30px;
+    letter-spacing: 1px;
+    border: none;
+    color: #FDD48A;
+}
+
+button:hover{
+    cursor:pointer;
+}
+
+#resultKelvin{
+    color:#e79b0f;
+    margin-top:20px;
+    font-size:32px;
+    font-weight: bolder;
+}
+
+#resultFahrenheit{
+    color:#e79b0f;
+    margin-top:20px;
+    font-size:32px;
+    font-weight: bolder;
+}

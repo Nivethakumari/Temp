@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="design2.css">
+    <title>C to F and F to C</title>
+</head>
+
+<body class="body">
+    <nav>
+        <div class="logo">
+            <a id="symbol" href="">TEMPERATURE CONVERTER</a>
+        </div>
+        <ul>
+        <li><a class="hover" href="main.html"><i>Home page</i></a></li>
+        <li><a class="hover" href="c to f.html"><i>°C to °F & °F to °C</i></a></li>
+        <li><a class="hover" href="c to k.html"><i>°C to K & K to °C</i></a></li>
+        <li><a class="hover" href="f to k.html"><i>°F to K & K to °F</i></a></li>
+        </ul>
+        <div class="menu">
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+        </div>
+    </nav>
+
+    <div id="wrapper">
+        <h2>Celsius to Fahrenheit</h2>
+        <div class="inputdiv">
+            <input type="number" id="inputCelsius" placeholder="Temp in °C" onkeydown="handleKeyPress(event, convertToCelsiusToFahrenheit)">
+            <button type="button" onclick="convertToCelsiusToFahrenheit()">Convert to Fahrenheit</button>
+        </div>
+        <div id="resultCelsiusToFahrenheit"></div>
+        <p>FORMULA: ℉=(℃*1.8)+32</p>
+    </div>
+
+    <div id="wrapper">
+        <h2>Fahrenheit to Celsius</h2>
+        <div class="inputdiv">
+            <input type="number" id="inputFahrenheit" placeholder="Temp in °F" onkeydown="handleKeyPress(event, convertToFahrenheitToCelsius)">
+            <button type="button" onclick="convertToFahrenheitToCelsius()">Convert to Celsius</button>
+        </div>
+        <div id="resultFahrenheitToCelsius"></div>
+        <p>FORMULA: ℃=(℉-32)/1.8</p>
+    </div>
+
+    <script>
+        const menu = document.querySelector('.menu');
+        const menuList = document.querySelector('nav ul');
+        menu.addEventListener('click', () => {
+            menuList.classList.toggle('showmenu');
+        });
+
+        function handleKeyPress(event, conversionFunction) {
+            if (event.key === "Enter") {
+                conversionFunction();
+            }
+        }
+
+        function convertToCelsiusToFahrenheit() {
+            const celval = Number(document.getElementById("inputCelsius").value);
+            const fahval = (celval * 1.8) + 32;
+            const resultCelsiusToFahrenheit = document.getElementById("resultCelsiusToFahrenheit");
+            resultCelsiusToFahrenheit.innerHTML = fahval.toFixed(2) + ' °F';
+        }
+
+        function convertToFahrenheitToCelsius() {
+            const fahval = Number(document.getElementById("inputFahrenheit").value);
+            const celval = (fahval - 32) / 1.8;
+            const resultFahrenheitToCelsius = document.getElementById("resultFahrenheitToCelsius");
+            resultFahrenheitToCelsius.innerHTML = celval.toFixed(2) + ' °C';
+        }
+    </script>
+</body>
+</html>

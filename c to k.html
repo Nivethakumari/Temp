@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="design3.css">
+    <title>C to K and K to C</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a id="symbol" href="">TEMPERATURE CONVERTER</a>
+        </div>
+        <ul>
+        <li><a class="hover" href="main.html"><i>Home page</i></a></li>
+        <li><a class="hover" href="c to f.html"><i>°C to °F & °F to °C</i></a></li>
+        <li><a class="hover" href="c to k.html"><i>°C to K & K to °C</i></a></li>
+        <li><a class="hover" href="f to k.html"><i>°F to K & K to °F</i></a></li>
+        </ul>
+        <div class="menu">
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+        </div>
+    </nav>
+
+    <div id="wrapper">
+        <h2>Celsius to Kelvin</h2>
+        <div class="inputdiv">
+            <input type="number" id="inputCelsius" placeholder="Temp in °C" onkeydown="handleKeyPress(event, convertToKelvin)">
+            <button type="button" onclick="convertToKelvin()">Convert to Kelvin</button>
+        </div>
+        <div id="resultKelvin"></div>
+        <p>FORMULA: K=℃+273.15</p>
+    </div>
+
+    <div id="wrapper">
+        <h2>Kelvin to Celsius</h2>
+        <div class="inputdiv">
+            <input type="number" id="inputKelvin" placeholder="Temp in K" onkeydown="handleKeyPress(event, convertToCelsius)">
+            <button type="button" onclick="convertToCelsius()">Convert to Celsius</button>
+        </div>
+        <div id="resultCelsius"></div>
+        <p>FORMULA: ℃=K-273.15</p>
+    </div>
+
+    <script>
+        const menu = document.querySelector('.menu');
+        const menuList = document.querySelector('nav ul');
+        menu.addEventListener('click', () => {
+            menuList.classList.toggle('showmenu');
+        });
+
+        function handleKeyPress(event, conversionFunction) {
+            if (event.key === "Enter") {
+                conversionFunction();
+            }
+        }
+
+        function convertToKelvin() {
+            const celval = Number(document.getElementById("inputCelsius").value);
+            const kelval = celval + 273.15;
+            const resultKelvin = document.getElementById("resultKelvin");
+            resultKelvin.innerHTML = kelval.toFixed(2) + ' K ';
+        }
+
+        function convertToCelsius() {
+            const kelval = Number(document.getElementById("inputKelvin").value);
+            const celval = kelval - 273.15;
+            const resultCelsius = document.getElementById("resultCelsius");
+            resultCelsius.innerHTML = celval.toFixed(2) + ' °C';
+        }
+    </script>
+</body>
+</html>
